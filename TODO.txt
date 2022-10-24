@@ -1,0 +1,62 @@
+TODO:
+1)User model, registration and login
+    a)install django 
+    b)startproject and startapp
+    c)set up settings
+        i) admin
+        ii) DIRS template
+        iii) registration
+        iv) DIRS css 
+        v) debug?
+    d) django-redux (reference class website)
+    e) user model (makemigrations and migrate)
+    f) check if login shows ()
+    g) create 3 super_users one for each 
+2)MODELS that aren't User
+    a)Resources
+        i) title (char)
+        ii) author (foreign key for author) (char)
+        iii) description (textarea? it is the longer character field)
+        iV) url (text field w/db value of link for html/src)
+        v) created_at
+        vi) updated_at
+        vii) topics (foreign key that connects to categories class) **next step FK configuration**
+        viii) define __str__ where appropriate (this is last)
+        9) favorites
+        10) User (foreign key to connect to user model)
+        11) mediatype (foreign key)
+    b)topics
+        i) title
+        ii) (slug??)
+        iii) category specific URLs (e.g., /python would o nly have python stuff)
+        iv) must be non-nullable
+    c) author 
+        i) name (charfield)
+    d) media
+        i) type (charfield)
+3)manually input
+
+4) Views, Templates, URLs (urls.py)
+    A) build a homepage (index)
+        I) view
+            -
+        ii) url
+        iii) template
+            -if content produce outcome, if nothing display no content
+    B)We need a favorite page
+    C)Individual pages for topics (python, html, JS)
+     
+5) import all the data
+           
+THINGS TO FIGURE OUT:
+--how to store the url and connect to external url
+--wth is a slug?
+--figure out what makes for unique URL, app (as relates to slugs?)
+
+least important step: 
+--styling or css 
+
+stretch:
+--images for resources
+--custom styling over package like bumba
+--liking resources (possibly manytomany class)
