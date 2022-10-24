@@ -1,30 +1,31 @@
 TODO:
 1)User model, registration and login
-    a)install django 
-    b)startproject and startapp
-    c)set up settings
-        i) admin
-        ii) DIRS template
-        iii) registration
-        iv) DIRS css 
-        v) debug?
-    d) django-redux (reference class website)
-    e) user model (makemigrations and migrate)
-    f) check if login shows ()
-    g) create 3 super_users one for each 
+    [x]install django 
+    [x]startproject and startapp
+    [x]set up settings
+        [x] admin
+        [x] DIRS template
+        [x] registration in installed apps & auth_user_model
+        [x] DIRS css 
+        v) ****debug?****
+    [x] django-redux (reference class website)
+    [x] user model (makemigrations and migrate)
+    [x] check if login shows () from server w/ /admin
+    [x] create 3 super_users one for each (had to rebuild orm so need to add 2 more supers)
 2)MODELS that aren't User
-    a)Resources
-        i) title (char)
-        ii) author (foreign key for author) (char)
-        iii) description (textarea? it is the longer character field)
-        iV) url (text field w/db value of link for html/src)
-        v) created_at
-        vi) updated_at
-        vii) topic (foreign key that connects to categories class) **next step FK configuration**
+    [x] Resources
+        [x] title (char)
+        [x] author (foreign key for author) (char)
+        [x] description (textfield is the longer one)
+        [x] url (text field w/db value of link for html/src)
+        [x] created_at
+        [x] updated_at
+        [x] topic (foreign key that connects to categories class) charfield
+        [x]**next step FK configuration**
         viii) define __str__ where appropriate (this is last)
-        9) favorites
-        10) User (foreign key to connect to user model)
-        11) mediatype (foreign key)
+        [x] favorites (booloeanfield)
+        [x] User (foreign key to connect to user model)
+        11) mediatype (foreign key)charfield
     b)topic (no s bc django adds that to the models)
         i) title
         ii) (slug??)
@@ -38,8 +39,7 @@ TODO:
 
 4) Views, Templates, URLs (urls.py)
     A) build a homepage (index)
-        I) view
-            -
+        i) view conditional based on login status
         ii) url
         iii) template
             -if content produce outcome, if nothing display no content
@@ -60,3 +60,18 @@ stretch:
 --images for resources
 --custom styling over package like bumba
 --liking resources (possibly manytomany class)
+
+CELEBRATE OUR WINS!
+10.24.22
+1. Setup project and app
+2. Built our user models
+3. Built other models!!!
+4. Got index page up
+5. Figured our next steps!
+
+
+
+THINGS TO REVIEW 10/24 EVENING:
+data migration links info
+__str__
+look at sample data
