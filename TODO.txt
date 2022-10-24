@@ -20,12 +20,12 @@ TODO:
         iV) url (text field w/db value of link for html/src)
         v) created_at
         vi) updated_at
-        vii) topics (foreign key that connects to categories class) **next step FK configuration**
+        vii) topic (foreign key that connects to categories class) **next step FK configuration**
         viii) define __str__ where appropriate (this is last)
         9) favorites
         10) User (foreign key to connect to user model)
         11) mediatype (foreign key)
-    b)topics
+    b)topic (no s bc django adds that to the models)
         i) title
         ii) (slug??)
         iii) category specific URLs (e.g., /python would o nly have python stuff)

@@ -8,17 +8,20 @@ class User(AbstractUser):
     birth_date = models.DateField(null=True, blank=True)
 
 class Resource(models.Model):
+    title = models.CharField(max_length=200)
     author = models.ForeignKey('Author', on_delete=models.CASCADE, blank=True, null=True)
     topic = models.ForeignKey('Topic', on_delete=models.CASCADE, blank=True, null=True)
     mediatype = models.ForeignKey('Mediatype', on_delete=models.CASCADE, blank=True, null=True)
     user = models.ForeignKey('User', on_delete=models.CASCADE, blank=True, null=True)
-    title = models.CharField(max_length=200)
     description = models.TextField(max_length=1300)
     # if url doesn't work look into this
     url = models.CharField(max_length=200)
     favorite = models.BooleanField(default=False, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}\nby {self.author} from a {self.mediatype}\n {self.description}"
 
 class Topic(models.Model):
     title = models.SlugField()
