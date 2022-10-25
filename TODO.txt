@@ -51,14 +51,14 @@ TODO:
     [] create page for user to view all favorited resources
 
 7) style
+    least important (aka LAST) step: 
+    --styling or css ==> figure out classes/styles
            
 THINGS TO FIGURE OUT:
 [x] how to store the url and connect to external url
 [x] wth is a slug?
 [x] figure out what makes for unique URL, app (as relates to slugs?)
 
-least important (aka LAST) step: 
---styling or css 
 
 stretch:
 --images for resources
@@ -89,4 +89,9 @@ CELEBRATE!
 2. all resource specific urls working
 3. asked rebecca for help!
 4. we ALL contributed
-5. 
+5. we will get THIS!
+
+THINGS TO REVIEW & (NEXT STEPS) 10.25.22 EVENING:
+--fabricator login thingy
+--favorites (boolean on/off how form?[check how we did edit forms in django music] button? both?) -- maybe use edit form
+--style (link sheet, design)
