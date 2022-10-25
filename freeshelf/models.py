@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib import admin
+from django.urls import reverse
 
 class User(AbstractUser):
     bio = models.TextField(max_length=500, blank=True)
@@ -10,7 +11,7 @@ class User(AbstractUser):
 class Resource(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200, null=True, blank=True)
-    topic = models.ForeignKey('Topic', on_delete=models.CASCADE, blank=True, null=True)
+    topic = models.ForeignKey('Topic', on_delete=models.CASCADE, blank=True, null=True, related_name='resources')
     mediatype = models.ForeignKey('Mediatype', on_delete=models.CASCADE, blank=True, null=True)
     user = models.ForeignKey('User', on_delete=models.CASCADE, blank=True, null=True)
     description = models.TextField(max_length=1300)
@@ -25,10 +26,13 @@ class Resource(models.Model):
 
 class Topic(models.Model):
     title = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True, null=True, blank=True)
+    slug = models.SlugField(null=True)
 
     def __str__(self):
         return f"{self.title}"
+
+    def get_absolute_url(self):
+        return reverse("topic_detail", kwargs={"slug": self.slug})  # new
 
 class Mediatype(models.Model):
     mediatype = models.CharField(max_length=50)

@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>Test worked</p>
-<div class="container">
-    {{ resources }}
-</div>
 
+<div class="container">
+    {% for resource in resources %}
+        <br>
+        {{ resource.title }}<br>
+        {{ resource.author}}<br>
+        {{ resource.topic }}<br>
+        {{ resource.mediatype }}<br>
+        {{ resource.description }}<br>
+        {{ resource.url }}<br>
+        {{ resource.favorite }}<br>
+        {{ resource.created_at }}<br>
+        {{ resource.updated_at }}<br>
+    {% endfor %}
+</div>
 {% endblock %}

@@ -10,7 +10,13 @@
 </head>
 <body>
     <header>
-        <h1> Freeshelf </h1>
+        <a href="/"><h1>Freeshelf</h1></a>
+        <div class="links">
+            {% for topic in topics %}
+                <p><a href="{% url 'topic_detail' slug=topic.slug %}">{{ topic }}</a></p>
+            {% endfor %}
+        </div>
+        
     </header>
     
     {% block content %}

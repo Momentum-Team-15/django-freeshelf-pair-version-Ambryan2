@@ -4,12 +4,6 @@
 
 {% block content %}
 
-<div class="links">
-    {% for topic in topics %}
-        <p><a href="{% url 'topic_detail' pk=topic.pk %}">{{ topic }}</a></p>
-    {% endfor %}
-</div>
-
 <h3>These Are Resources: </h3>
 <div class="container">
     {% for resource in resources %}
@@ -19,8 +13,12 @@
         {{ resource.topic }}<br>
         {{ resource.mediatype }}<br>
         {{ resource.description }}<br>
-        {{ resource.url }}<br>
-        {{ resource.favorite }}<br>
+        <a href="{{ resource.url }}">{{ resource.url }}</a><br>
+
+        {% if resource.favorite == False %}
+            <button type="submit">Favorite</button><br>
+        {% endif %}
+
         {{ resource.created_at }}<br>
         {{ resource.updated_at }}<br>
     {% endfor %}

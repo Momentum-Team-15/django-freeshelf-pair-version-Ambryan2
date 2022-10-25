@@ -9,7 +9,9 @@ def index(request):
     topics = Topic.objects.all()
     return render(request, 'freeshelf/index.html',{'resources':resources,'topics':topics})
 
-def topic_detail(request, pk):
+# We want topic-detail to load a specific page for each topic
+def topic_detail(request, slug):
     # this is grabbing info from resources database that has matching pk
-    resources = Resource.objects.filter(topic=pk)
-    return render(request, 'freeshelf/topic_detail.html', {'resources':resources})
+    topic = get_object_or_404(Topic,slug=slug)
+    topics = Topic.objects.all()
+    return render(request, 'freeshelf/topic_detail.html', {'topic':topic, 'resources':topic.resources.all(),'topics':topics})

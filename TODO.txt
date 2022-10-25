@@ -7,7 +7,7 @@ TODO:
         [x] DIRS template
         [x] registration in installed apps & auth_user_model
         [x] DIRS css 
-        v) ****debug?****
+🤔       v) ****debug?****
     [x] django-redux (reference class website)
     [x] user model (makemigrations and migrate)
     [x] check if login shows () from server w/ /admin
@@ -22,38 +22,42 @@ TODO:
         [x] updated_at
         [x] topic (foreign key that connects to categories class) charfield
         [x]**next step FK configuration**
-        viii) define __str__ where appropriate (this is last)
+        [x] define __str__ where appropriate (this is last)
         [x] favorites (booloeanfield)
         [x] User (foreign key to connect to user model)
-        11) mediatype (foreign key)charfield
-    b)topic (no s bc django adds that to the models)
-        i) title
-        ii) (slug??)
-        iii) category specific URLs (e.g., /python would o nly have python stuff)
-        iv) must be non-nullable
-    c) author 
-        i) name (charfield)
-    d) media
-        i) type (charfield)
-3)manually input
+        [x] mediatype (foreign key)charfield
+    [x] topic (no s bc django adds that to the models)
+        [x] title
+        [x] slug field added but not wired
+        [x] category specific URLs (e.g., /python would o nly have python stuff)
+        [x] must be non-nullable
+    [x] author -- REMOVED MODEL not necessary
+    [x] mediatype
+        [x] type (charfield)
+[x] manually input data
 
 4) Views, Templates, URLs (urls.py)
-    A) build a homepage (index)
-        i) view conditional based on login status
-        ii) url
-        iii) template
-            -if content produce outcome, if nothing display no content
-    B)We need a favorite page
-    C)Individual pages for topics (python, html, JS)
+    [x] build a homepage (index)
+        [x] url
+        [x] template
+🤔    ** WIRE CONDTIONALS for templates **
+    [x] Individual pages for topics (python, html, JS)
      
-5) import all the data
+5) Login 🤔 see resource 
+
+
+6) Favorites
+    [] make buttons or forms or...to favorite/unfavorite
+    [] create page for user to view all favorited resources
+
+7) style
            
 THINGS TO FIGURE OUT:
---how to store the url and connect to external url
---wth is a slug?
---figure out what makes for unique URL, app (as relates to slugs?)
+[x] how to store the url and connect to external url
+[x] wth is a slug?
+[x] figure out what makes for unique URL, app (as relates to slugs?)
 
-least important step: 
+least important (aka LAST) step: 
 --styling or css 
 
 stretch:
@@ -61,18 +65,28 @@ stretch:
 --custom styling over package like bumba
 --liking resources (possibly manytomany class)
 --author profiles
+--comments on posts
+--favorites page for User
 
-CELEBRATE OUR WINS!
+================================================================
+
 10.24.22
-1. Setup project and app
-2. Built our user models
-3. Built other models!!!
-4. Got index page up
-5. Figured our next steps!
-
-
+CELEBRATE OUR WINS!
+1. Setup project and app - woot!
+2. Built our user model :)
+3. Built other models!
+4. Got index page up :)
+5. Figured out our next steps!
 
 THINGS TO REVIEW 10/24 EVENING:
 data migration links info
 __str__
 look at sample data
+
+10.25.22
+CELEBRATE!
+1. SLUGS! (eating them)
+2. all resource specific urls working
+3. asked rebecca for help!
+4. we ALL contributed
+5. 

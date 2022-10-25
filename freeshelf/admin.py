@@ -5,4 +5,10 @@ from .models import User, Resource, Mediatype, Topic
 admin.site.register(User)
 admin.site.register(Resource)
 admin.site.register(Mediatype)
-admin.site.register(Topic)
+
+class TopicAdmin(admin.ModelAdmin):
+    list_display = ("title",)
+
+admin.site.register(Topic, TopicAdmin)
+
+
