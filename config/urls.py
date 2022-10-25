@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
     path('', views.index, name='home'),
+    path('freeshelf/<int:pk>', views.topic_detail, name='topic_detail'),
 ]

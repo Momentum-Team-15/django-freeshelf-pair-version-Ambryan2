@@ -60,6 +60,7 @@ stretch:
 --images for resources
 --custom styling over package like bumba
 --liking resources (possibly manytomany class)
+--author profiles
 
 CELEBRATE OUR WINS!
 10.24.22
