@@ -17,7 +17,6 @@ class Resource(models.Model):
     description = models.TextField(max_length=1300)
     # if url doesn't work look into this
     url = models.CharField(max_length=200)
-    favorite = models.BooleanField(default=False, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -42,3 +41,10 @@ class Mediatype(models.Model):
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
+
+class Favorite(models.Model):
+    resource = models.ForeignKey('Resource', on_delete=models.CASCADE)
+    user = models.ForeignKey('User', on_delete=models.CASCADE, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
