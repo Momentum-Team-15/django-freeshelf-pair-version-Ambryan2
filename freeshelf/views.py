@@ -1,8 +1,10 @@
+from ast import Delete
 from importlib import resources
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from .models import User, Resource, Mediatype, Topic
+from .models import User, Resource, Mediatype, Topic, Favorite
+from .forms import FavoriteForm
 
 
 # Create your views here.
@@ -20,12 +22,17 @@ def topic_detail(request, slug):
     topics = Topic.objects.all()
     return render(request, 'freeshelf/topic_detail.html', {'topic':topic, 'resources':topic.resources.all(),'topics':topics})
 
-def select_favorite():
-    if request.method == 'POST':
-        form = FavoriteForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-        return redirect("home")
-    else:
-        form = FavoriteForm()
-    return render (request, 'freeshelf/select_favorite.html', {'form': form})
+def add_favorite(request, res_pk):
+    # copying resource aaron gave us
+    resource = get_object_or_404(Resource, pk=res_pk)
+    unfavorited = False
+    for favorite in request.user.favorites.all():
+        if resource == favorite.resource:
+            favorite.delete()
+            unfavorited = True
+    if not unfavorited:
+        favorite = Favorite.objects.create(resource=resource, user=request.user)
+        favorite.save()
+    return redirect('home')
+
+

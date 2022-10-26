@@ -43,8 +43,7 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 class Favorite(models.Model):
-    resource = models.ForeignKey('Resource', on_delete=models.CASCADE)
-    user = models.ForeignKey('User', on_delete=models.CASCADE, blank=True, null=True)
+    resource = models.ForeignKey('Resource', on_delete=models.CASCADE, related_name='favorites')
+    user = models.ForeignKey('User', on_delete=models.CASCADE, blank=True, null=True, related_name='favorites')
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     

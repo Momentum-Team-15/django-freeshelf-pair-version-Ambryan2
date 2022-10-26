@@ -4,20 +4,17 @@
 
 {% block content %}
 
-<h3>These Are Resources: </h3>
+<h2>These Are Resources: </h2>
 <div class="container">
     {% for resource in resources %}
         <br>
-        {{ resource.title }}<br>
-        {{ resource.author}}<br>
+        <h4><a href="{{ resource.url }}">{{ resource.title }}</a> by  {{ resource.author}}</h4>
         {{ resource.topic }}<br>
         {{ resource.mediatype }}<br>
         {{ resource.description }}<br>
-        <a href="{{ resource.url }}">{{ resource.url }}</a><br>
-
-        {% if resource.favorite == False %}
-            <button type="submit">Favorite</button><br>
-        {% endif %}
+        
+        <p><a href="{% url 'favorite' res_pk=resource.pk %}">Favorite</a></p>
+        {% c %}
 
         {{ resource.created_at }}<br>
         {{ resource.updated_at }}<br>
