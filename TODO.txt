@@ -49,6 +49,8 @@ TODO:
 6) Favorites
     [] make buttons or forms or...to favorite/unfavorite
     [] create page for user to view all favorited resources
+    [x] create favorite model
+    
 
 7) style
     least important (aka LAST) step: 
@@ -95,3 +97,5 @@ THINGS TO REVIEW & (NEXT STEPS) 10.25.22 EVENING:
 --fabricator login thingy
 --favorites (boolean on/off how form?[check how we did edit forms in django music] button? both?) -- maybe use edit form
 --style (link sheet, design)
+
+

@@ -10,7 +10,7 @@ class User(AbstractUser):
 
 class Resource(models.Model):
     title = models.CharField(max_length=200)
-    author = models.CharField(max_length=200, null=True, blank=True)
+    author = models.CharField(max_length=200, default='Anonymous')
     topic = models.ForeignKey('Topic', on_delete=models.CASCADE, blank=True, null=True, related_name='resources')
     mediatype = models.ForeignKey('Mediatype', on_delete=models.CASCADE, blank=True, null=True)
     user = models.ForeignKey('User', on_delete=models.CASCADE, blank=True, null=True)

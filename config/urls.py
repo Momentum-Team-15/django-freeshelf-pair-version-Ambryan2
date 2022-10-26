@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
     path('', views.index, name='home'),
+    path('favorite', views.favorite_page, name='favorite_page'),
     path('freeshelf/<slug:slug>', views.topic_detail, name='topic_detail'),
     path('favorite/new/<int:res_pk>', views.add_favorite, name='favorite'),
 ]

@@ -13,8 +13,8 @@
         {{ resource.mediatype }}<br>
         {{ resource.description }}<br>
         
+        <!-- need to make copy of favorite and get directed to topic_detail page -->
         <p><a href="{% url 'favorite' res_pk=resource.pk %}">Favorite</a></p>
-        {% c %}
 
         {{ resource.created_at }}<br>
         {{ resource.updated_at }}<br>

@@ -5,13 +5,14 @@
 <div class="container">
     {% for resource in resources %}
         <br>
-        {{ resource.title }}<br>
-        {{ resource.author}}<br>
+        <br>
+        <h4><a href="{{ resource.url }}">{{ resource.title }}</a> by  {{ resource.author}}</h4>
         {{ resource.topic }}<br>
         {{ resource.mediatype }}<br>
         {{ resource.description }}<br>
-        {{ resource.url }}<br>
-        {{ resource.favorite }}<br>
+        
+        <!-- need to make copy of favorite and get directed to topic_detail page -->
+        <p><a href="{% url 'favorite' res_pk=resource.pk %}">Favorite</a></p>
         {{ resource.created_at }}<br>
         {{ resource.updated_at }}<br>
     {% endfor %}

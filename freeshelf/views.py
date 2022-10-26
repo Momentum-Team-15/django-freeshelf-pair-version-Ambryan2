@@ -33,6 +33,11 @@ def add_favorite(request, res_pk):
     if not unfavorited:
         favorite = Favorite.objects.create(resource=resource, user=request.user)
         favorite.save()
-    return redirect('home')
+    return redirect(request.META['HTTP_REFERER'])
+
+def favorite_page(request):
+    favorited = Favorite.objects.filter(user = request.user)
+    topics = Topic.objects.all()
+    return render(request, 'freeshelf/favorite_detail.html', {'favorited':favorited,'topics':topics})
 
 

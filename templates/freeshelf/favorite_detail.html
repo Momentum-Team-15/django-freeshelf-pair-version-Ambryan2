@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    {% for favorite in favorited %}
+        <br>
+        <br>
+        <h4><a href="{{ resource.url }}">{{ favorite.resource.title }}</a> by  {{ favorite.resource.author}}</h4>
+        {{ favorite.resource.topic }}<br>
+        {{ favorite.resource.mediatype }}<br>
+        {{ favorite.resource.description }}<br>
+    
+        <p><a href="{% url 'favorite' res_pk=favorite.resource.pk %}">Favorite</a></p>
+        {{ favorite.resource.created_at }}<br>
+        {{ favorite.resource.updated_at }}<br>
+    {% endfor %}
+</div>
+{% endblock %}
