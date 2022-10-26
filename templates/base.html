@@ -10,18 +10,9 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <a href="/"><h1>Freeshelf</h1></a>
-        <div class="links">
-            {% for topic in topics %}
-                <p><a href="{% url 'topic_detail' slug=topic.slug %}">{{ topic }}</a></p>
-            {% endfor %}
-            <p><a href="{% url 'favorite_page' %}">Favorites</a></p>
-        </div>
-        
-    </header>
-    
+    <a href="/"><h1>Freeshelf</h1></a>
     {% block content %}
+    
     {% endblock %}  
 </body>
 </html>

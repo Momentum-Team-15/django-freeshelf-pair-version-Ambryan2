@@ -2,6 +2,17 @@
 
 {% block content %}
 
+<header>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+    <div class="links">
+        {% for topic in topics %}
+            <p><a href="{% url 'topic_detail' slug=topic.slug %}">{{ topic }}</a></p>
+        {% endfor %}
+        <p><a href="{% url 'favorite_page' %}">Favorites</a></p>
+    </div>
+</header>
+
+
 <div class="container">
     {% for resource in resources %}
         <br>

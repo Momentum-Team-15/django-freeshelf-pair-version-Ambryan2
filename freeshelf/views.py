@@ -40,4 +40,6 @@ def favorite_page(request):
     topics = Topic.objects.all()
     return render(request, 'freeshelf/favorite_detail.html', {'favorited':favorited,'topics':topics})
 
+def logout(request):
+    return render(request, 'accounts/logout/')
 

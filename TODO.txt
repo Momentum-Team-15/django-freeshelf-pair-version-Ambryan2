@@ -7,7 +7,7 @@ TODO:
         [x] DIRS template
         [x] registration in installed apps & auth_user_model
         [x] DIRS css 
-🤔       v) ****debug?****
+ [NA]    v) ****debug?****
     [x] django-redux (reference class website)
     [x] user model (makemigrations and migrate)
     [x] check if login shows () from server w/ /admin
@@ -40,15 +40,16 @@ TODO:
     [x] build a homepage (index)
         [x] url
         [x] template
-🤔    ** WIRE CONDTIONALS for templates **
+   [NA] ** WIRE CONDTIONALS for templates **
     [x] Individual pages for topics (python, html, JS)
      
-5) Login 🤔 see resource 
+[x] Login  see resource 
+[x] NEED LOGOUT BUTTON
 
 
 6) Favorites
-    [] make buttons or forms or...to favorite/unfavorite
-    [] create page for user to view all favorited resources
+🤔    [] make button/image for favorited vs unfavorited ?? or...to favorite/unfavorite
+    [x] create page for user to view all favorited resources
     [x] create favorite model
     
 

@@ -20,6 +20,7 @@ from freeshelf import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
+    path('accounts/logout/',views.logout, name='logout' ),
     path('', views.index, name='home'),
     path('favorite', views.favorite_page, name='favorite_page'),
     path('freeshelf/<slug:slug>', views.topic_detail, name='topic_detail'),
