@@ -24,8 +24,7 @@
         {{ favorite.resource.description }}<br>
     
         <p><a href="{% url 'favorite' res_pk=favorite.resource.pk %}">Favorite</a></p>
-        {{ favorite.resource.created_at }}<br>
-        {{ favorite.resource.updated_at }}<br>
+        {{ favorite.created_at }}<br>
     {% endfor %}
 </div>
 {% endblock %}

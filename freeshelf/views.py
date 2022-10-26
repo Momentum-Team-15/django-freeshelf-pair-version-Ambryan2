@@ -4,14 +4,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .models import User, Resource, Mediatype, Topic, Favorite
-from .forms import FavoriteForm
+
 
 
 # Create your views here.
 
 @login_required
 def index(request):
-    resources = Resource.objects.all()
+    resources = Resource.objects.all().order_by('-created_at')
     topics = Topic.objects.all()
     return render(request, 'freeshelf/index.html',{'resources':resources,'topics':topics})
 
@@ -36,7 +36,7 @@ def add_favorite(request, res_pk):
     return redirect(request.META['HTTP_REFERER'])
 
 def favorite_page(request):
-    favorited = Favorite.objects.filter(user = request.user)
+    favorited = Favorite.objects.filter(user = request.user).order_by('-created_at')
     topics = Topic.objects.all()
     return render(request, 'freeshelf/favorite_detail.html', {'favorited':favorited,'topics':topics})
 
