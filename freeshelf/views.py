@@ -20,10 +20,9 @@ def topic_detail(request, slug):
     # this is grabbing info from resources database that has matching pk
     topic = get_object_or_404(Topic,slug=slug)
     topics = Topic.objects.all()
-    return render(request, 'freeshelf/topic_detail.html', {'topic':topic, 'resources':topic.resources.all(),'topics':topics})
+    return render(request, 'freeshelf/topic_detail.html', {'resources':topic.resources.all(),'topics':topics})
 
 def add_favorite(request, res_pk):
-    # copying resource aaron gave us
     resource = get_object_or_404(Resource, pk=res_pk)
     unfavorited = False
     for favorite in request.user.favorites.all():
