@@ -1,30 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <header>
-    <p><a href="{% url 'logout' %}">Logout</a></p>
-    <div class="links">
+    <div class="linkcont">
         {% for topic in topics %}
-            <p><a href="{% url 'topic_detail' slug=topic.slug %}">{{ topic }}</a></p>
+            <p class="links"><a href="{% url 'topic_detail' slug=topic.slug %}">{{ topic }}</a></p>
         {% endfor %}
-        <p><a href="{% url 'favorite_page' %}">Favorites</a></p>
+        <p class="links"><a href="{% url 'favorite_page' %}">Favorites</a></p>
     </div>
+    <p class="links"><a href="{% url 'logout' %}">Logout</a></p>
 </header>
-
-
 
 <div class="container">
     {% for favorite in favorited %}
-        <br>
-        <br>
+    <div class="resource">
         <h4><a href="{{ resource.url }}">{{ favorite.resource.title }}</a> by  {{ favorite.resource.author}}</h4>
-        {{ favorite.resource.topic }}<br>
-        {{ favorite.resource.mediatype }}<br>
-        {{ favorite.resource.description }}<br>
-    
-        <p><a href="{% url 'favorite' res_pk=favorite.resource.pk %}">Favorite</a></p>
-        {{ favorite.created_at }}<br>
+        <p>{{ favorite.resource.topic }} | {{ favorite.resource.mediatype }} | Resource Added: {{ favorite.resource.created_at }}</p>
+        <p>{{ favorite.resource.description }}</p>
+        <!-- need to make copy of favorite and get directed to topic_detail page -->
+        <div>
+            <a href="{% url 'favorite' res_pk=favorite.resource.pk %}">Favorite</a>
+        </div>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

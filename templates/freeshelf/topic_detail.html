@@ -3,29 +3,27 @@
 {% block content %}
 
 <header>
-    <p><a href="{% url 'logout' %}">Logout</a></p>
-    <div class="links">
+    <div class="linkcont">
         {% for topic in topics %}
-            <p><a href="{% url 'topic_detail' slug=topic.slug %}">{{ topic }}</a></p>
+            <p class="links"><a href="{% url 'topic_detail' slug=topic.slug %}">{{ topic }}</a></p>
         {% endfor %}
-        <p><a href="{% url 'favorite_page' %}">Favorites</a></p>
+        <p class="links"><a href="{% url 'favorite_page' %}">Favorites</a></p>
     </div>
+    <p class="links"><a href="{% url 'logout' %}">Logout</a></p>
 </header>
 
 
 <div class="container">
     {% for resource in resources %}
-        <br>
-        <br>
+    <div class="resource">
         <h4><a href="{{ resource.url }}">{{ resource.title }}</a> by  {{ resource.author}}</h4>
-        {{ resource.topic }}<br>
-        {{ resource.mediatype }}<br>
-        {{ resource.description }}<br>
-        
+        <p>{{ resource.topic }} | {{ resource.mediatype }} | Resource Added: {{ resource.created_at }}</p>
+        <p>{{ resource.description }}</p>
         <!-- need to make copy of favorite and get directed to topic_detail page -->
-        <p><a href="{% url 'favorite' res_pk=resource.pk %}">Favorite</a></p>
-        {{ resource.created_at }}<br>
-        {{ resource.updated_at }}<br>
+        <div>
+            <a href="{% url 'favorite' res_pk=resource.pk %}">Favorite</a>
+        </div>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}
