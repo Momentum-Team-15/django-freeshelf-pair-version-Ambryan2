@@ -16,7 +16,7 @@ class Resource(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE, blank=True, null=True)
     description = models.TextField(max_length=1300)
     # if url doesn't work look into this
-    url = models.CharField(max_length=200)
+    url = models.CharField(max_length=200, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
